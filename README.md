@@ -37,10 +37,16 @@ Built with Electron.
   - 270°
 - Or none
 
-### Simple UI
+### UI
 - Haven't made any CSS for it so it looks ugly,
 - But, it works
 
+---
+
+### Icon
+- It's an ugly stock photo
+- I'll make a real one later
+ 
 ---
 
 ## Platforms
