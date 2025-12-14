@@ -1,3 +1,11 @@
+# To do in the future
+- Support other image formats
+- Make it look less ugly
+- Add music or something idk
+- Drag and drop
+- Test on Mac
+  
+---
 # JPGs to PDF
 
 Simple desktop app that converts a folder of JPG/JPEGs into a PDF — with features to control page size, orientation, margins, and image fitting.
