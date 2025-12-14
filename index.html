@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JPGs → PDF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+      h1 { margin: 0 0 12px 0; }
+      .row { display: grid; grid-template-columns: 180px 1fr auto; gap: 10px; align-items: center; margin: 10px 0; }
+      .row label { font-weight: 600; }
+      input[type="text"], input[type="number"], select { width: 100%; padding: 8px; }
+      button { padding: 8px 12px; cursor: pointer; }
+      .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .card { border: 1px solid #ddd; border-radius: 10px; padding: 14px; margin-top: 14px; }
+      .status { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #f6f6f6; padding: 10px; border-radius: 8px; min-height: 64px; }
+      .actions { display: flex; gap: 10px; margin-top: 12px; }
+      .muted { color: #666; font-size: 13px; }
+      .checkboxRow { display:flex; gap:10px; align-items:center; }
+    </style>
+  </head>
+  <body>
+    <h1>JPG folder → PDF</h1>
+    <div class="muted">One image per page. Choose page size/orientation/fit/margins.</div>
+
+    <div class="card">
+      <div class="row">
+        <label>Input folder</label>
+        <input id="inputFolder" type="text" placeholder="Pick a folder..." />
+        <button id="pickFolderBtn">Browse…</button>
+      </div>
+
+      <div class="row">
+        <label>Output PDF</label>
+        <input id="outputFile" type="text" placeholder="Pick where to save…" />
+        <button id="pickSaveBtn">Save As…</button>
+      </div>
+
+      <div class="grid2">
+        <div class="row" style="grid-template-columns: 180px 1fr;">
+          <label>Page format</label>
+          <select id="pageFormat">
+            <option value="A4">A4</option>
+            <option value="Letter">Letter</option>
+            <option value="Image">Match Image Size</option>
+          </select>
+        </div>
+
+        <div class="row" style="grid-template-columns: 180px 1fr;">
+          <label>Orientation</label>
+          <select id="orientation">
+            <option value="Portrait">Portrait</option>
+            <option value="Landscape">Landscape</option>
+          </select>
+        </div>
+
+        <div class="row" style="grid-template-columns: 180px 1fr;">
+          <label>Fit mode</label>
+          <select id="fitMode">
+            <option value="Contain">Contain (no crop)</option>
+            <option value="Cover">Cover (crop)</option>
+          </select>
+        </div>
+
+        <div class="row" style="grid-template-columns: 180px 1fr;">
+          <label>Margin (pt)</label>
+          <input id="marginPt" type="number" min="0" value="0" />
+        </div>
+
+        <div class="row" style="grid-template-columns: 180px 1fr;">
+          <label>Rotate</label>
+          <select id="rotate">
+            <option value="Auto">Auto (EXIF)</option>
+            <option value="None">None</option>
+            <option value="90">90°</option>
+            <option value="180">180°</option>
+            <option value="270">270°</option>
+          </select>
+        </div>
+
+        <div class="row" style="grid-template-columns: 180px 1fr;">
+          <label>Order</label>
+          <div class="checkboxRow">
+            <input id="reverseOrder" type="checkbox" />
+            <label for="reverseOrder" style="font-weight: 500;">Reverse</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="convertBtn">Convert</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight: 700; margin-bottom: 8px;">Status</div>
+      <div id="status" class="status"></div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
