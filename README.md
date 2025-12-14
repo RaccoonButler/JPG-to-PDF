@@ -15,7 +15,7 @@ Built with Electron.
 - Files are sorted in natural order (`1, 2, 3` etc.)
 - Optional reverse order
 
-### 📄 Page formatting
+### Page formatting
 - Page sizes:
   - **A4**
   - **Letter**
@@ -50,7 +50,7 @@ Built with Electron.
 
 ---
 
-## 🚀 Usage (Standalone App)
+## Usage (Standalone App)
 
 1. Launch
 2. Pick folder containing JPG images
