@@ -8,7 +8,7 @@
 ---
 # JPGs to PDF
 
-Simple desktop app that converts a folder of JPG/JPEGs into a PDF — with features to control page size, orientation, margins, and image fitting.
+Simple desktop app that converts a bulk folder of JPG/JPEGs into a PDF — with features to control page size, orientation, margins, and image fitting.
 
 Built with Electron.
 
